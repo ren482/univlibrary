@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    background-color:#c0c0c0;
+    font-size-adjust:none;
+}
+
+
+
+.white_area {
+    background-color:#ffffff;
+}
+
+.card {
+    padding:10px;
+}
+
+.filter {
+    background-color:#00008b;
+    margin-top: 10px;
+    margin-right: 10px;
+    color:#ffffff;
+}
+.headline {
+    border-bottom: solid 3px #ffffff;
+}
+.search-botton {
+    background-color:#ffffff;
+}
+.skyblue_area{
+    margin-top:10px;
+    background-color:#87ceeb;
+}

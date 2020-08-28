@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-2"></div>
+    
+    <div class="col-md-5 white_area">
+        <div class="card" >
+            <div class="card-header">
+                運営からの初めまして
+            </div>
+            <div class="card-body">
+                楽しんでください
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 white_area">
+        <div class="orange_area">
+          
+            <%= form_with(model:@user, local:true) do |f| %>
+            <%= render "layouts/error_messages", model: f.object %>
+            
+            <div class="form-group">
+                <div id="private_info">
+            <%= f.email_field :email, placeholder: "メールアドレス", class: "form-control" %>
+            <%= f.password_field :password, placeholder: "パスワード", class: "form-control" %>
+            <%= f.password_field :password_confirmation, placeholder: "パスワード確認", class: "form-control" %>
+                </div>
+                <div id="public_info">
+            <%= f.text_field :name, placeholder: "ユーザ名", class: "form-control" %>
+            <%= f.select :major, {"法学部":1, "文学部":2}, { include_blank: "専攻を選択して下さい"}, {class: "form-control", required: true} %>
+            <%= f.select :academic_level, {"学部生":1, "院生":2, "その他(教授etc)":3}, {include_blank: "学問レベルを選択して下さい"}, {class: "form-control", required: true} %>
+            <%= f.text_area :profile_content, class: "form-control", placeholder:"今月中に読みたい本でも書いといてください" %>
+                </div>
+            
+            
+            <%= f.submit "登録完了", class: "btn btn_signup btn-block" %>
+            </div>
+            
+            <% end %>
+         
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>

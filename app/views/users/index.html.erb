@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-2">
+        <%= render "layouts/sidebar_filter" %>
+    </div>
+    <div class="col-md-7">
+        <div class="headline">
+            <%#= "ラジオボタン検索用のフォーむから送られてきたデータを表示" %>
+            のユーザ一覧
+        </div>
+        <div class="white_area">
+            <!--Userモデルのインスタンスからデータを(全件)取得して、表示させたい。その為には、ユーザ登録viewを作り、それに対応してcreateアクションを作る必要がある。-->
+        </div>
+    </div>
+    <div class="col-md-3 white_area">
+        <div>
+        <div class="skyblue_area">
+            ランダムユーザ
+        </div>
+        <div>
+            テスト
+            <%#= ユーザモデルインスタンスからランダムで取得したユーザレコードを、一件表示させたい %>
+        </div>
+        </div>
+        
+        <div>
+        <div class="skyblue_area">
+            おすすめユーザ
+        </div>
+        <div>
+            テスト
+            <%#= ユーザモデルインスタンスからフォロワーのカウント数が多いユーザレコードをで取得したユーザレコードを、一件表示させたい %>
+        </div>
+        </div>
+        
+    </div>
+</div>

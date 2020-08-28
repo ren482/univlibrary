@@ -3,4 +3,7 @@ Rails.application.routes.draw do
     root to: "toppages#index"
     
     get "academics", to: "toppages#academics"
+    
+    get "signup", to: "users#new"
+    resources :users
 end
