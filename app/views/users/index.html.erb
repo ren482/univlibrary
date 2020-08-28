@@ -2,15 +2,36 @@
     <div class="col-md-2">
         <%= render "layouts/sidebar_filter" %>
     </div>
+    
     <div class="col-md-7">
         <div class="headline">
             <%#= "ラジオボタン検索用のフォーむから送られてきたデータを表示" %>
             のユーザ一覧
+          
         </div>
         <div class="white_area">
             <!--Userモデルのインスタンスからデータを(全件)取得して、表示させたい。その為には、ユーザ登録viewを作り、それに対応してcreateアクションを作る必要がある。-->
+            <% if @users.any? %>
+            <ul class="list-unstyled">
+                <% @users.each do |user| %>
+                <li>
+                    <div class="orange_area">
+                          <a href="#">ユーザアイコンの表示はムズイ（∵ユーザモデルにicon_imageを保存する際の仕組みがいまいちわかってないから)</a>
+                          <a href="#">
+                          <% num = user.major %>
+                          <%= image_tag "#{num}.jpg", class: "major_icon" %>
+                          </a>
+                    </div>
+                    <div class="text_display_area">
+                    <%= user.profile_content %>
+                    </div>
+                </li>
+                <% end %>
+            </ul>
+            <% end %>
         </div>
     </div>
+    
     <div class="col-md-3 white_area">
         <div>
         <div class="skyblue_area">
@@ -34,3 +55,4 @@
         
     </div>
 </div>
+

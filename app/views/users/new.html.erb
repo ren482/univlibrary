@@ -25,7 +25,8 @@
                 </div>
                 <div id="public_info">
             <%= f.text_field :name, placeholder: "ユーザ名", class: "form-control" %>
-            <%= f.select :major, {"法学部":1, "文学部":2}, { include_blank: "専攻を選択して下さい"}, {class: "form-control", required: true} %>
+            <%= f.select :major, {"法学部":1, "文学部":2, "教育学部":3, "総人":4, "経済学部":5, "医学部":6, "工学部":7, "理学部":8, "薬学部":9, "農学部":10},
+              { include_blank: "専攻を選択して下さい"}, {class: "form-control", required: true} %>
             <%= f.select :academic_level, {"学部生":1, "院生":2, "その他(教授etc)":3}, {include_blank: "学問レベルを選択して下さい"}, {class: "form-control", required: true} %>
             <%= f.text_area :profile_content, class: "form-control", placeholder:"今月中に読みたい本でも書いといてください" %>
                 </div>
