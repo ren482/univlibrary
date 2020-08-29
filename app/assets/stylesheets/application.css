@@ -26,6 +26,7 @@ body {
 
 .white_area {
     background-color:#ffffff;
+    padding:10px;
     
 }
 
@@ -56,6 +57,7 @@ body {
     background-color:#00008b;
     margin-bottom:20px;
     margin-right:10px;
+    text-align:center;
 }
 .text_display_area {
     border-radius:5px;
@@ -68,7 +70,14 @@ body {
     margin:5px;
 }
 .major_icon {
+    display:block;
     width:40px;
     height:40px;
     margin:0px;
+}
+.sidebar_image {
+    display:block;
+    width:70px;
+    height:70px;
+    margin:10px;
 }

@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-2"></div>
+    
+    <div class="col-md-5 white_area">
+        <div class="card" >
+            <div class="card-header">
+                運営からのお久しぶりです
+            </div>
+            <div class="card-body">
+                楽しんでください
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 white_area">
+        <div class="orange_area">
+          
+            <%= form_with(url: login_path, scope: :session,  local:true) do |f| %>
+           
+            
+            <div class="form-group">
+                <div id="private_info">
+            <%= f.email_field :email, placeholder: "メールアドレス", class: "form-control" %>
+            <%= f.password_field :password, placeholder: "パスワード", class: "form-control" %>
+                </div>
+            
+            
+            <%= f.submit "ログインする", class: "btn btn_signup btn-block" %>
+            </div>
+            
+            <% end %>
+            
+            
+         
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
