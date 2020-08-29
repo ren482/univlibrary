@@ -1,9 +1,31 @@
 <div class="row">
+    <div class="col-md-10 orange_area row">
+            <div class="col-md-2">
+                <a href="#">ユーザのアイコン表示はまじでムズイ</a>
+            </div>
+            <div class="col-md-7 usertext_display_area">
+                <%= @user.name %>:<%= @user.profile_content %>
+            </div>
+            <div class="col-md-2">
+                <% num = @user.major %>
+                <%= image_tag "#{num}.jpg" %>
+            </div>
+    </div>
+    
+</div>
+
+
+<div class="row mt-4">
     <div class="col-md-2">
         <%= render "layouts/sidebar_auser" %>
     </div>
     
-    <div class="offset-md-1 col-md-8">
-        <%= @user.name %>
+    <div class="col-md-8">
+        <div class="headline">
+            <%= @user.name %>のアウトプット一覧
+        </div>
+        <div class="white_area">
+            レビューモデルができてから、一覧表示させたい。@users.each ～user.reviews で全件取得できるはず
+        </div>
     </div>
 </div>

@@ -19,6 +19,9 @@ body {
     font-size-adjust:none;
 }
 
+.dropdown:hover > .dropdown-menu {
+    display:block;
+}
 
 
 .white_area {
@@ -38,6 +41,9 @@ body {
 }
 .headline {
     border-bottom: solid 3px #ffffff;
+    margin-right:10px;
+    margin-left:10px;
+    margin-bottom:10px;
 }
 .search-botton {
     background-color:#ffffff;
@@ -48,15 +54,21 @@ body {
 }
 .sidebar_auser_blue_area{
     background-color:#00008b;
+    margin-bottom:20px;
+    margin-right:10px;
 }
 .text_display_area {
     border-radius:5px;
     border:2px solid #000000;
     margin:0px 10px 10px 10px;
 }
+.usertext_display_area {
+    border-radius:5px;
+    border:2px solid #000000;
+    margin:5px;
+}
 .major_icon {
-    width:50px;
-    height:50px;
+    width:40px;
+    height:40px;
     margin:0px;
-    text-align:right;
 }
