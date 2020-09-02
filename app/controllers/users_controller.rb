@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     
     if @user.save
       flash[:success] = "ありがとうございます。あなたの読書がより有意義になる見込み9割です。"
-      redirect_to "#"
+      redirect_to login_url
     else
       flash.now[:danger] = "申し訳ないですが登録し直してください。すぐに終わります。"
       render :new 

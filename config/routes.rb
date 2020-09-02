@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     resources :users do
       member do
         get :auserreviews
-        
+        get :followings
+        get :followers
       end
       collection do
         get :myreviews
@@ -39,6 +40,9 @@ Rails.application.routes.draw do
       end
     end
     
+
+    
     resources :mybooks, only: [:create, :destroy]
+   resources :relationships, only: [:create, :destroy]
     
 end

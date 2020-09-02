@@ -17,6 +17,7 @@
                 <li>
                     <div class="orange_area">
                           <a href="<%= user_path(user) %>">ユーザアイコンの表示はムズイ（∵ユーザモデルにicon_imageを保存する際の仕組みがいまいちわかってないから)</a>
+                          <%= render "relationships/follow_button", user: user %>
                           <a href="#">
                           <% num = user.major %>
                           <%= image_tag "#{num}.jpg", class: "major_icon" %>
