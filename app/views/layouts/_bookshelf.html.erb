@@ -1,0 +1,31 @@
+<div class="white_area">
+    <div class="card">
+        <div class="card-header headline">
+            本棚
+        </div>
+        <div class="card-body row">
+            <% if books.any? %>
+            <% books.each do |book| %>
+            <div class="col-md-3">
+                <div class="bookshelf_book">
+                <%= book.title %>
+                </div>
+                <div>
+                    <!--なんかいい感じに、追加した日付を表示したい-->
+                    <%#= book.created_at %>
+                </div>
+                <div>
+                    <!--reviewsテーブルとbooksテーブルが紐づいたら、reviewをaddしてあるbookのボタンは別で表示させたい-->
+                    <% if current_page?(mybookshelf_users_path) %>
+                    <%= link_to "この本のアウトプットを書く", :controller => "reviews", :action => "new", :id => book.id, class: "btn btn-success" %>
+                    <% else %>
+                    <%= link_to "この本のアウトプットを見る", :controller =>"reviews", :action => "usersReviewsIndex", :id => book.id, class: "btn btn-primary" %>
+                    <% end %>
+                </div>
+            </div>
+            <% end %>
+            <% end %>
+            
+        </div>
+    </div>
+</div>

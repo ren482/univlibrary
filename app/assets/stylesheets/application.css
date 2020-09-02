@@ -27,7 +27,11 @@ body {
 .white_area {
     background-color:#ffffff;
     padding:10px;
+    margin:10px;
     
+}
+.blue_area {
+    background-color:#00008b;
 }
 
 .card {
@@ -40,11 +44,16 @@ body {
     margin-right: 10px;
     color:#ffffff;
 }
+.card-header {
+    background-color:#00008b;
+}
 .headline {
     border-bottom: solid 3px #ffffff;
     margin-right:10px;
     margin-left:10px;
     margin-bottom:10px;
+    text-align:center;
+    color:#ffffff;
 }
 .search-botton {
     background-color:#ffffff;
@@ -80,4 +89,29 @@ body {
     width:70px;
     height:70px;
     margin:10px;
+}
+.review_form {
+    border-radius:5px;
+    border:dotted 3px;
+}
+
+.review_icon {
+    display:block;
+    border:none;
+    width:60px;
+    height:60px;
+    text-align:right;
+}
+
+.loose-leaf {
+    background-image: url("ルーズリーフ.jpg");
+}
+.bookshelf_book {
+    border-radius:5px;
+    border:solid 3px;
+    width:100px;
+    height:150px;
+    display:flex;
+    writing-mode:vertical-rl;
+    align-items:center;
 }

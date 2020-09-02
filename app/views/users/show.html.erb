@@ -17,15 +17,15 @@
 
 <div class="row mt-4">
     <div class="col-md-2">
-        <%= render "layouts/sidebar_auser" %>
+        <%= render "layouts/sidebar_auser", user: @user %>
     </div>
     
     <div class="col-md-8">
         <div class="headline">
-            <%= @user.name %>のアウトプット一覧
+            <%= @user.name %>の本棚
         </div>
         <div class="white_area">
-            レビューモデルができてから、一覧表示させたい。@users.each ～user.reviews で全件取得できるはず
+           <%= render "layouts/bookshelf", books: @books %>
         </div>
     </div>
 </div>

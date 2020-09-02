@@ -1,0 +1,28 @@
+ <div class="アウトプットフォーム">
+ <div class="card">
+        <div class="card-header row">
+            <a href="#" class="col-md-5 headline">テンプレ的に書く</a>
+            <a href="#" class="col-md-5 headline">自由に書く</a>
+        </div>
+        <div class="card-body review_form">
+    <%= form_with(model: @review, local: true) do |f| %>
+    <%= render "layouts/error_messages", model: @review %>
+            <div class="review__form_item">
+    <%= f.label :purpose, "本を読み始めた目的" %>
+    <%= f.text_area :purpose, class: "form-control" %>
+    <%= f.label :sentences, "ぱっと思い出せる1,2文" %>
+    <%= f.text_area :sentences, class: "form-control" %>
+    <%= f.label :discovery, "新たに得た考え方" %>
+    <%= f.text_area :discovery, class: "form-control" %>
+    <%= f.label :summary, "全体の要約" %>
+    <%= f.text_area :summary, class: "form-control" %>
+    <%= f.hidden_field :book_id %>
+            </div>
+    <%= f.submit "アウトプットを完了する", class: "btn btn btn-success" %>
+    <% end %>
+    
+    <%= link_to "Myページトップに戻る", mypage_users_path %>
+        </div>
+        
+</div>
+</div>

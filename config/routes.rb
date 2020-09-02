@@ -6,10 +6,39 @@ Rails.application.routes.draw do
     
     
     get "signup", to: "users#new"
-    get "mypage", to: "users#mypage"
-    resources :users
+    
+    resources :users do
+      member do
+        get :auserreviews
+        
+      end
+      collection do
+        get :myreviews
+        get :mybookshelf
+        get :mypage
+        
+      end
+    end
     
     get "login", to: "sessions#new"
     post "login", to: "sessions#create"
     delete "logout", to: "sessions#destroy"
+    
+    resources :reviews, only: [:create, :destroy, :index, :new, :edit, :update] do
+      member do
+        get :new
+        get :usersReviewsIndex
+        
+      end
+    end
+    
+    resources :books do
+      member do
+        get :complete
+        get :bookReviews
+      end
+    end
+    
+    resources :mybooks, only: [:create, :destroy]
+    
 end

@@ -11,14 +11,15 @@
         </div>
     </a>
     
-    <a href="#">
+    <a href="<%= mybookshelf_users_path %>">
         <div class="sidebar_auser_blue_area">
             <p class="headline">My本棚</p>
             <%= image_tag "本棚.png", class: "sidebar_image" %>
         </div>
     </a>
     
-    <a href="#">
+    
+    <a href="<%= myreviews_users_path %>">
         <div class="sidebar_auser_blue_area">
             <p class="headline">Myアウトプット</p>
             <%= image_tag "アウトプット.png", class: "sidebar_image"  %>
@@ -39,7 +40,7 @@
         </div>
     </a>
     
-    <a href="user_path(@user)">
+    <a href="<%= auserreviews_user_path(@user) %>">
         <div class="sidebar_auser_blue_area">
             <p class="headline">アウトプット</p>
             <%= image_tag "アウトプット.png",class: "sidebar_image" %>

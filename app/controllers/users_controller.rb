@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @books = @user.favbooks
   end
 
   def new
@@ -24,8 +25,25 @@ class UsersController < ApplicationController
   end
   
   def mypage
+    @user = current_user
   end
     
+  def myreviews
+    @reviews = current_user.reviews.order(id: :desc).page(params[:page]).per(25)
+  end
+  
+  def mybookshelf
+    @books = current_user.favbooks
+    @user = current_user
+    @book = current_user.mybooks.build
+    @review = current_user.reviews.build
+  end
+  
+  def auserreviews
+     @user = User.find(params[:id])
+  end
+  
+ 
   
   private
   
