@@ -14,6 +14,10 @@
         <p>新たに得た考え方:<%= review.discovery %></p>
         <p>全体の要約:<%= review.summary %></p>
         </div>
+        
+        <div>
+            <%= render "favorites/like_button", review: review %>
+        </div>
     </div>
     <% end %>
 </ul>

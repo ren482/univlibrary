@@ -1,0 +1,31 @@
+<% if current_user.liked?(review) %>
+
+    
+<%#= form_with(model: current_user.favorites.find_by(review_id: review.id), local: true, method: :delete) do |f| %>
+
+      
+<%#= hidden_field_tag :like_id, review.id %>
+
+      
+<%#= f.submit 'お気に入りから外す', class: 'btn btn-danger btn-sm' %>
+
+    
+<%# end %>
+
+  
+<% else %>
+
+    
+<%= form_with(model: current_user.favorites.build, local: true) do |f| %>
+
+      
+<%= hidden_field_tag :like_id, review.id %>
+
+      
+<%= f.submit '相手のモチベを上げる(=いいねを押す)', class: 'btn btn-primary btn-sm' %>
+
+    
+<% end %>
+
+  
+<% end %>

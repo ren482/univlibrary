@@ -2,6 +2,9 @@ class Review < ApplicationRecord
   belongs_to :user
   belongs_to :book
   
+  has_many :favorites
+  has_many :likes_user, through: :favorites, source: :user
+  
  
   
 #   文字数は今のところ適当。あと、ミニマムをつけてもいいしれん。
