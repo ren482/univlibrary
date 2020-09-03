@@ -1,4 +1,5 @@
 <ul class="list-unstyled" >
+    <% if reviews.any? %>
     <% reviews.each do |review| %>
     <div class="white_area">
         <div>
@@ -19,5 +20,8 @@
             <%= render "favorites/like_button", review: review %>
         </div>
     </div>
+    <% end %>
+    <% else %>
+    このユーザはまだアウトプットをしておりませぬ。むかつきますね。
     <% end %>
 </ul>

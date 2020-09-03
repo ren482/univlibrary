@@ -4,6 +4,8 @@ class RelationshipsController < ApplicationController
     current_user.follow(user)
     flash[:success] = 'ユーザをフォローしました。'
     redirect_to user
+    
+    user.create_notification_follow!(current_user)
   end
 
   def destroy

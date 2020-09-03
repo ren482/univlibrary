@@ -18,10 +18,13 @@ class User < ApplicationRecord
     has_many :relationships
     has_many :followings, through: :relationships, source: :follow
     has_many :reverses_of_relationship, class_name: "Relationshp", foreign_key: "follow_id"
-    has_many :followers, through: :reverses_of_relationship, source: :users
+    has_many :followers, through: :reverses_of_relationship, source: :user
     
     has_many :favorites
     has_many :likes, through: :favorites, source: :review
+    
+    has_many :active_notifications, class_name: "Notification", foreign_key: "visitor_id", dependent: :destroy
+    has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
     
     def addToBookshelf(other_book)
         self.mybooks.find_or_create_by(book_id: other_book.id)
@@ -65,5 +68,17 @@ class User < ApplicationRecord
     
     def liked?(other_review)
         self.likes.include?(other_review)
+    end
+    
+    def create_notification_follow!(current_user)
+        temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ?", current_user.id, id, "follow"])
+        if temp.blank?
+            notification = current_user.active_notifications.new(
+                visited_id: id, 
+                checked: "true",
+                action: "follow"
+                )
+                notification.save if notification.valid?
+        end
     end
 end

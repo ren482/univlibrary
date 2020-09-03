@@ -45,5 +45,6 @@ Rails.application.routes.draw do
    resources :mybooks, only: [:create, :destroy]
    resources :relationships, only: [:create, :destroy]
    resources :favorites, only: [:create, :destroy]
+   resources :notifications, only: [:index]
     
 end

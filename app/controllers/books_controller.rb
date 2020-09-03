@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   def index
     @books = Book.order(id: :desc).page(params[:page]).per(25)
+    @gakubu_books = Book.all
   end
   
   def new

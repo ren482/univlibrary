@@ -4,6 +4,8 @@ class FavoritesController < ApplicationController
     current_user.like(review)
     flash[:success] = "アウトプットにいいねをしました。他ユーザのモチベ向上に伴い、引き続き色んなアウトプットが見られるかもですね。"
     redirect_to root_url
+    
+    review.create_notification_like!(current_user)
   end
 
   
