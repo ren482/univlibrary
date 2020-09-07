@@ -18,6 +18,7 @@
                     <!--reviewsテーブルとbooksテーブルが紐づいたら、reviewをaddしてあるbookのボタンは別で表示させたい-->
                     <% if current_page?(mybookshelf_users_path) %>
                     <%= link_to "この本のアウトプットを書く", :controller => "reviews", :action => "new", :id => book.id, class: "btn btn-success" %>
+                    <%= link_to "Delete", book, method: :delete, data: { confirm: "You sure?" }, class: 'Button' %>
                     <% else %>
                     <%= link_to "この本のアウトプットを見る", :controller =>"reviews", :action => "usersReviewsIndex", :id => book.id, class: "btn btn-primary" %>
                     <% end %>

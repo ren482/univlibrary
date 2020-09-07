@@ -2,58 +2,43 @@
     <div class="col-md-2">
         <%= render "layouts/sidebar_filter" %>
     </div>
-    
     <div class="col-md-7">
-        <div class="headline">
-            <%#= "ラジオボタン検索用のフォーむから送られてきたデータを表示" %>
-            のユーザ一覧
-          
-        </div>
-        <div class="white_area">
-            <!--Userモデルのインスタンスからデータを(全件)取得して、表示させたい。その為には、ユーザ登録viewを作り、それに対応してcreateアクションを作る必要がある。-->
+        <p class="headline">のユーザ一覧</p>
+        <div>
             <% if @users.any? %>
+            <% @users.each do |user| %>
             <ul class="list-unstyled">
-                <% @users.each do |user| %>
                 <li>
                     <div class="orange_area">
                           <a href="<%= user_path(user) %>">ユーザアイコンの表示はムズイ（∵ユーザモデルにicon_imageを保存する際の仕組みがいまいちわかってないから)</a>
                           <%= render "relationships/follow_button", user: user %>
-                          <a href="#">
                           <% num = user.major %>
-                          <%= image_tag "#{num}.jpg", class: "major_icon" %>
-                          </a>
+                          <a href="<%= users_path(major: num) %>"><%= image_tag "#{num}.jpg", class: "major_icon" %></a>
+                          <% numnum = user.academic_level %>
+                          <a href="<%= users_path(academic_level: numnum) %>"><%= image_tag "#{numnum}'.png", class: "major_icon" %></a>
                     </div>
                     <div class="text_display_area">
                     <%= user.profile_content %>
                     </div>
                 </li>
-                <% end %>
             </ul>
+            <% end %>
+            <% else %>
+            あなたが初めて登録してくれた人です。
             <% end %>
         </div>
     </div>
-    
-    <div class="col-md-3 white_area">
-        <div>
-        <div class="skyblue_area">
-            ランダムユーザ
+    <div class="col-md-2">
+        <div class="random-user">
+            <div class="headline">
+                ランダムユーザ
+            </div>
+            <div class="random-user-content">
+                <a href="<%= user_path(@random_user) %>">
+                <%= @random_user.name %>
+                </a>
+            </div>
         </div>
-        <div>
-            テスト
-            <%#= ユーザモデルインスタンスからランダムで取得したユーザレコードを、一件表示させたい %>
-        </div>
-        </div>
-        
-        <div>
-        <div class="skyblue_area">
-            おすすめユーザ
-        </div>
-        <div>
-            テスト
-            <%#= ユーザモデルインスタンスからフォロワーのカウント数が多いユーザレコードをで取得したユーザレコードを、一件表示させたい %>
-        </div>
-        </div>
-        
     </div>
 </div>
 

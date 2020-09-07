@@ -8,19 +8,28 @@
     <!--    </div>-->
     <!--</a>-->
     
-    <%= link_to "通知！！！", notifications_path %>
+    
+    <div class="sidebar_auser_content">
+            <a href="<%= notifications_path %>">
+            <p class="headline">
+                通知
+            </p>
+            <%= image_tag "通知.png", class: "sidebar_image" %>
+            </a>
+    </div>
+    
 
-    <a href="#">
-        <div class="sidebar_auser_blue_area">
+    
+    <div class="sidebar_auser_content">
         <!--後にログイン機能をつけるので、その際にはMyの文字列をifで変える-->
         <p class="headline">Myプロフィール</p>
         
         <img src="Userモデルインスタンスからicon_imageの値（文字列）を取得して、パスとして表示させたい" alt="ユーザアイコン">
-        </div>
-    </a>
+    </div>
+    
     
     <a href="<%= mybookshelf_users_path %>">
-        <div class="sidebar_auser_blue_area">
+        <div class="sidebar_auser_content">
             <p class="headline">My本棚</p>
             <%= image_tag "本棚.png", class: "sidebar_image" %>
         </div>
@@ -28,28 +37,28 @@
     
     
     <a href="<%= myreviews_users_path %>">
-        <div class="sidebar_auser_blue_area">
+        <div class="sidebar_auser_content">
             <p class="headline">Myアウトプット</p>
             <%= image_tag "アウトプット.png", class: "sidebar_image"  %>
         </div>
     </a>
     
     <a href="#">
-        <div class="sidebar_auser_blue_area">
+        <div class="sidebar_auser_content">
             <p class="headline">Myコミュニティ</p>
             <%= image_tag "コミュニティ.png", class: "sidebar_image" %>
         </div>
     </a>
 <% else %>
     <a href="#">
-        <div class="sidebar_auser_blue_area">
+        <div class="sidebar_auser_content">
             <p class="headline">本棚</p>
             <%= image_tag "本棚.png", class: "sidebar_image" %>
         </div>
     </a>
     
     <a href="<%= auserreviews_user_path(@user) %>">
-        <div class="sidebar_auser_blue_area">
+        <div class="sidebar_auser_content">
             <p class="headline">アウトプット</p>
             <%= image_tag "アウトプット.png",class: "sidebar_image" %>
         </div>

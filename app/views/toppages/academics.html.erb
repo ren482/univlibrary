@@ -3,13 +3,12 @@
     
      <div class="col-md-8">
          
-        <div class="row">
+        <div class="row white_area">
         <div class="col-md-9"><img src="#" alt="名言です。"></div>
         <div class="col-md-3">
              <h3 class="border-bottom">会員限定</h3>
-             <img src="#" alt="アウトプット管理機能">
+             <img src="アウトプット.png" alt="アウトプット管理機能">
              <img src="#" alt="通知機能">
-             <img src="#" alt="チャット機能">
         </div>
         </div>
         
@@ -23,32 +22,25 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <img class="col-md-4" src="#" alt="小説です。">
-                        <img class="col-md-4" src="#" alt="それら以外です。">
-                        <img class="col-md-4" src="#" alt="専門書ですね。">
+                        <img class="col-md-4" src="novel.jpg" alt="小説です。">
+                        <img class="col-md-4" src="一般向け学問書.jpg" alt="それら以外です。">
+                        <img class="col-md-4" src="専門書.jpg" alt="専門書ですね。">
                     </div>
                     <div class="row">
-                        <a href="#" class="btn btn-secondary col-md-3 mr-3">小説</a>
-                        <a href="#" class="btn btn-secondary col-md-3 mr-3">それら以外</a>
-                        <a href="#" class="btn btn-secondary col-md-3">専門書</a>
+                        <%= link_to "小説", books_path(genre: 1), method: :post, class: "btn btn-primary" %>
+                        <%= link_to "それ以外", books_path(genre: 2), method: :post, class: " btn btn-primary" %>
+                        <%= link_to "専門書", books_path(genre: 3), method: :post, class: " btn btn-primary" %>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col-md-6 card">
                 <div class="card-header">
                     他人のアウトプットを見る
                 </div>
                 <div class="card-body">
-                    <div class="row">
-                       <img class="col-md-4" src="#" alt="小説です。">
-                        <img class="col-md-4" src="#" alt="それら以外です。">
-                        <img class="col-md-4" src="#" alt="専門書ですね。">
-                    </div>
-                    <div class="row">
-                          <a href="#" class="btn btn-secondary col-md-3 mr-3">小説</a>
-                        <a href="#" class="btn btn-secondary col-md-3 mr-3">それら以外</a>
-                        <a href="#" class="btn btn-secondary col-md-3">専門書</a>
-                    </div>
+                    <a href="<%= reviews_path %>"><%= image_tag "アウトプット.png" %></a>
                 </div>
                 
             </div>

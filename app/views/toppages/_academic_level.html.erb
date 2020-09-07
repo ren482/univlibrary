@@ -1,5 +1,5 @@
 <div class="row">
-    <a href="#" class="col-md-4"><img src="#" alt="学部生だよ"></a>
-    <a href="#" class="col-md-4"><img src="#" alt="院生だよ"></a>
-    <a href="#" class="col-md-4"><img src="#" alt="教授陣だよだよ"></a>
+    <%= link_to "学部生ですな", users_path(academic_level: 1), method: :post %>
+    <%= link_to "院生ですね", users_path(academic_level: 2), method: :post %>
+    <%= link_to "教授陣等です、はい。", users_path(academic_level: 3), method: :post %>
 </div>

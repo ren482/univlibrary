@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     
     
     get "signup", to: "users#new"
+    post "signup", to: "users#create"
+    
+    post "addbooks", to: "books#create"
     
     resources :users do
       member do
@@ -17,7 +20,7 @@ Rails.application.routes.draw do
         get :myreviews
         get :mybookshelf
         get :mypage
-        
+        post :index
       end
     end
     
@@ -37,6 +40,9 @@ Rails.application.routes.draw do
       member do
         get :complete
         get :bookReviews
+      end
+      collection do 
+        post :index
       end
     end
     

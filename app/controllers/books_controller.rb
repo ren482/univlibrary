@@ -1,7 +1,15 @@
 class BooksController < ApplicationController
+  before_action :correct_user, only: [:destroy]
+  
   def index
+    if params[:genre].nil?
     @books = Book.order(id: :desc).page(params[:page]).per(25)
-    @gakubu_books = Book.all
+    else
+    @books = Book.where(genre: params[:genre]).page(params[:page]).per(25)
+    end
+    
+    @random_book = Book.where( 'id >= ?', rand(Book.first.id..Book.last.id) ).first
+    
   end
   
   def new
@@ -25,6 +33,9 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    @book.destroy
+    flash[:success] = "本を削除しました"
+    redirect_to mybookshelf_users_url
   end
 
   def show
@@ -44,6 +55,14 @@ class BooksController < ApplicationController
   private
   
   def book_params
-    params.require(:book).permit(:title, :status, :genre)
+    params.permit(:title, :status, :genre)
   end
+  
+  def correct_user
+    @book = current_user.mybooks.find_by(id: params[:id])
+    unless @book
+      redirect_to root_url
+    end
+  end
+  
 end

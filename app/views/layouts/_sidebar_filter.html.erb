@@ -1,51 +1,59 @@
 <!--ラジオボタンはあるが、フィルター検索機能はついてない-->
-<div id="sidebar_filter" class="white_area">
+<div id="sidebar_filter">
     
+    <% prefix = request.url %>
+    <% if prefix.include?("users") %>
+<!--ユーザ一覧ページ内の検索用フォーム-->
     <div class="filter">
-    <p class="headline">専攻で絞る</p>
-    <div class="search-form">
-        <%= form_with(scope: :search, url:users_path, method: :get, local: true) do |f| %>
-         <div>
-           <%= f.radio_button :major, :law %>
-           <%= f.label :major, "法学部", {value: :law, style: "display: inline-block;"} %>
-         </div>
-         <div>
-           <%= f.radio_button :major, :economics %>
-           <%= f.label :major, "経済学部", {value: :economics, style: "display: inline-block;"} %>
-         </div>
-         <div>
-            <%= f.radio_button :major, :sameasme %>
-           <%= f.label :major, "自分と同じ学部", {value: :sameasme, style: "display: inline-block;"} %>
-         </div>
-         <div class="search-botton">
-            <%= f.submit "検索", class: "btn btn-success btn-block" %>
-         </div>
-
+       <p class="headline">専攻で絞る</p>
+        <%= form_with(url: {contoroller: @users, action: :index}, scope: :users, local:true) do %>
+        <div class="filter-content">
+        <ul class="list-unstyled">
+            <li><input type="checkbox" name="major" value="1">あほう学部</li>
+            <li><input type="checkbox" name="major" value="2">文学部</li>
+            <li><input type="checkbox" name="major" value="3">教育学部</li>
+            <li><input type="checkbox" name="major" value="4">総人</li>
+            <li><input type="checkbox" name="major" value="5">経済</li>
+            <li><input type="checkbox" name="major" value="6">医学部</li>
+            <li><input type="checkbox" name="major" value="7">工学部</li>
+            <li><input type="checkbox" name="major" value="8">理学部</li>
+            <li><input type="checkbox" name="major" value="9">薬学部</li>
+            <li><input type="checkbox" name="major" value="10">農学部</li>
+            <input type="submit" value="検索" class="Button">
+        </ul>
+        </div>
         <% end %>
-    </div>
     </div>
     <div class="filter">
      <p class="headline">学問レベルで絞る</p>
-     <div class="search-form">
-        <%= form_with(scope: :search, url:users_path, method: :get, local: true) do |f| %>
-         <div>
-           <%= f.radio_button :major, :law %>
-           <%= f.label :major, "法学部", {value: :law, style: "display: inline-block;"} %>
-         </div>
-         <div>
-           <%= f.radio_button :major, :economics %>
-           <%= f.label :major, "経済学部", {value: :economics, style: "display: inline-block;"} %>
-         </div>
-         <div>
-            <%= f.radio_button :major, :sameasme %>
-           <%= f.label :major, "自分と同じ学部", {value: :sameasme, style: "display: inline-block;"} %>
-         </div>
-         <div class="search-botton">
-            <%= f.submit "検索", class: "btn btn-success btn-block" %>
-         </div>
-
+        <%= form_with(url: {contoroller: @users, action: :index}, scope: :users, local:true) do %>
+        <div class="filter-content">
+         <ul class="list-unstyled">
+            <li><input type="checkbox" name="academic_level" value="1">学部生</li>
+            <li><input type="checkbox" name="academic_level" value="2">院生</li>
+            <li><input type="checkbox" name="academic_level" value="3">教授etc</li>
+            <input type="submit" value="検索" class="Button">
+        </ul>
+        </div>
         <% end %>
     </div>
+    
+    <% else %>
+<!--京大の本棚ページ内の検索用フォーム-->
+    <div class="filter">
+    <p class="headline">ジャンルで絞る</p>
+        <%= form_with(url: {contoroller: @books, action: :index}, scope: :books, local:true) do %>
+        <div class="filter-content">
+        <ul class="list-unstyled filter-content">
+            <li><input type="checkbox" name="genre" value="1">小説</li>
+            <li><input type="checkbox" name="genre" value="2">専門書</li>
+            <li><input type="checkbox" name="genre" value="3">それ以外（具体例は出しません。あえて。）</li>
+            <input type="submit" value="検索" class="Button">
+        </ul>
+        </div>
+        <% end %>
     </div>
+    
+    <% end %>
     
 </div>

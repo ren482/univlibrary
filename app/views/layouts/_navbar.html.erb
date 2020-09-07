@@ -2,13 +2,13 @@
 
 <header class="mb-4">
 
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm">
         <a class="navbar-brand" href="/"><p>京大<br>読書</p></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
       <ul class="navbar-nav">
 
         <li class="nav-item"><a href="#" class="nav-link">京大読書とは</a></li>
@@ -21,7 +21,7 @@
 <% else %>
       <!--、カーソル載せてるときだけbreakdownさせたい -->
         <li class="nav-item dropdown" id="login_register_button">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><p>ログイン<br>会員登録</p></a>
+            <a href="#" class="nav-link dropdown-toggle justify-content-end" data-toggle="dropdown"><p>ログイン<br>会員登録</p></a>
             <ul class="dropdown-menu dropdown-menu-right">
                 <li class="dropdown-item"><a href="<%= signup_path %>">Register</a></li>
                 <li class="dropdown-divider"></li>

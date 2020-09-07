@@ -15,21 +15,64 @@
  */
 
 body {
-    background-color:#c0c0c0;
-    font-size-adjust:none;
-}
-
-.dropdown:hover > .dropdown-menu {
-    display:block;
-}
-
-
-.white_area {
     background-color:#ffffff;
-    padding:10px;
-    margin:10px;
-    
+    font-size-adjust:none;
+    font-family:serif;
 }
+
+nav {
+    background-color:#ffffff;
+    color:#1458A7;
+    /*border-bottom:solid 1px;*/
+    box-shadow:0px 1px 30px 1px #8EB8FF ;
+    margin-bottom:150px;
+}
+
+footer {
+}
+
+.headline {
+    border-bottom: solid 1px #dddddd;
+    margin-right:10px;
+    margin-left:10px;
+    margin-bottom:10px;
+    text-align:center;
+    color:#1458A7;
+}
+
+.filter {
+    margin-bottom:30px;
+    color:#333333;
+}
+
+.filter-content{
+    border:1px #dddddd;
+    border-radius:2px;
+}
+
+.Button {
+    font-size:10px;
+    padding:6px;
+    color:#1458A7;
+    background-color:#ffffff;
+    border:solid 1px #1458A7;
+    border-radius:2px;
+    margin-top:5px;
+}
+
+.sidebar_auser_content {
+  margin-bottom:30px;  
+  border:solid 1px #dddddd;
+  border-radius:2px;
+}
+
+.sidebar_image {
+    display:block;
+    width:70px;
+    height:70px;
+    margin:10px;
+}
+
 .blue_area {
     background-color:#00008b;
 }
@@ -38,36 +81,18 @@ body {
     padding:10px;
 }
 
-.filter {
-    background-color:#00008b;
-    margin-top: 10px;
-    margin-right: 10px;
-    color:#ffffff;
-}
+
 .card-header {
     background-color:#00008b;
 }
-.headline {
-    border-bottom: solid 3px #ffffff;
-    margin-right:10px;
-    margin-left:10px;
-    margin-bottom:10px;
-    text-align:center;
-    color:#ffffff;
-}
-.search-botton {
-    background-color:#ffffff;
-}
+
+
 .skyblue_area{
     margin-top:10px;
     background-color:#87ceeb;
 }
-.sidebar_auser_blue_area{
-    background-color:#00008b;
-    margin-bottom:20px;
-    margin-right:10px;
-    text-align:center;
-}
+
+
 .text_display_area {
     border-radius:5px;
     border:2px solid #000000;
@@ -84,12 +109,7 @@ body {
     height:40px;
     margin:0px;
 }
-.sidebar_image {
-    display:block;
-    width:70px;
-    height:70px;
-    margin:10px;
-}
+
 .review_form {
     border-radius:5px;
     border:dotted 3px;

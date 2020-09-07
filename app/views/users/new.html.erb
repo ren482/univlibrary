@@ -14,8 +14,7 @@
     <div class="col-md-3 white_area">
         <div class="orange_area">
           
-            <%= form_with(model:@user, local:true) do |f| %>
-            <%= render "layouts/error_messages", model: f.object %>
+            <%= form_with(url: signup_path, local:true) do |f| %>
             
             <div class="form-group">
                 <div id="private_info">

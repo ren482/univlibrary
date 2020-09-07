@@ -2,20 +2,28 @@
     <div class="col-md-2">
         <%= render "layouts/sidebar_filter" %>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-7">
         <div class="headline">
         の本一覧
     　　</div>
     　　<div class="white_area">
         <%= render "layouts/bookshelf", books: @books %>
+       
         </div>
     </div>
-    <div class="col-md-1 white_area">
-        <div class="skyblue_area">
+    <div class="col-md-2">
+        <div class="headline">
             ランダム本
         </div>
         <div>
-            ランダム本
+            <ul class="list-unstyled">
+            <%= @random_book.title %>
+            <% num = @random_book.genre %>
+            <%#= image_tag "#{num}''.jpg", class: "genre_icon" %>
+            </ul>
+            <div>
+            <%= link_to "本棚に追加", new_book_path, class: "Button" %>
+            </div>
         </div>
     </div>
 </div>

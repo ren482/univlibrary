@@ -1,16 +1,7 @@
+<% if logged_in? %>
+
 <% if current_user.liked?(review) %>
 
-    
-<%#= form_with(model: current_user.favorites.find_by(review_id: review.id), local: true, method: :delete) do |f| %>
-
-      
-<%#= hidden_field_tag :like_id, review.id %>
-
-      
-<%#= f.submit 'お気に入りから外す', class: 'btn btn-danger btn-sm' %>
-
-    
-<%# end %>
 
   
 <% else %>
@@ -28,4 +19,8 @@
 <% end %>
 
   
+<% end %>
+
+<% else %>
+
 <% end %>

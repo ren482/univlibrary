@@ -1,4 +1,5 @@
 <% notifications.each do |notification| %>
+<% notification.checked = true %>
 <% visitor = notification.visitor %>
-<li><%= visitor.name %></li>
+<li><%= visitor.name %>があなたをフォローしました。今後あなたのアウトプットは<%= visitor.name %>に見られるので、責任感を持って書いた方が良いですよ。まじで。</li>
 <% end %>
