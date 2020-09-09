@@ -6,14 +6,14 @@
         <div class="row white_area">
         <div class="col-md-9"><img src="#" alt="名言です。"></div>
         <div class="col-md-3">
-             <h3 class="border-bottom">会員限定</h3>
+             <h3 class="headline">会員限定</h3>
              <img src="アウトプット.png" alt="アウトプット管理機能">
              <img src="#" alt="通知機能">
         </div>
         </div>
         
         <div>
-            <p class="border-bottom">本を見つける</p>
+            <p class="headline">本を見つける</p>
         </div>
         <div class="row">
             <div class="col-md-6 card">
@@ -22,14 +22,18 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <img class="col-md-4" src="novel.jpg" alt="小説です。">
-                        <img class="col-md-4" src="一般向け学問書.jpg" alt="それら以外です。">
-                        <img class="col-md-4" src="専門書.jpg" alt="専門書ですね。">
-                    </div>
-                    <div class="row">
-                        <%= link_to "小説", books_path(genre: 1), method: :post, class: "btn btn-primary" %>
-                        <%= link_to "それ以外", books_path(genre: 2), method: :post, class: " btn btn-primary" %>
-                        <%= link_to "専門書", books_path(genre: 3), method: :post, class: " btn btn-primary" %>
+                        <div class="col-md-4">
+                            <a href="#" class="col-md-4"><%= image_tag "1''.jpg", alt: "小説です", class: "topicon" %></a>
+                            <%= link_to "小説", books_path(genre: 1), method: :post, class: "Button" %>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#" class="col-md-4"><%= image_tag "2''.jpg", alt: "それら以外です", class: "topicon" %></a>
+                            <%= link_to "小説", books_path(genre: 2), method: :post, class: "Button" %>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#" class="col-md-4"><%= image_tag "3''.jpg", alt: "専門書です", class: "topicon" %></a>
+                            <%= link_to "小説", books_path(genre: 3), method: :post, class: "Button" %>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -46,7 +50,7 @@
             </div>
         </div>
         <div>
-            <p class="border-bottom">人を見つける</p>
+            <p class="headline">人を見つける</p>
         </div>
         <div>
             <ul class="nav nav-tabs nav-justified mb-3">

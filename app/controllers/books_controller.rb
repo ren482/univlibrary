@@ -10,6 +10,7 @@ class BooksController < ApplicationController
     
     @random_book = Book.where( 'id >= ?', rand(Book.first.id..Book.last.id) ).first
     
+    @para_genre = params[:genre]
   end
   
   def new

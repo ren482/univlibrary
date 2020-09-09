@@ -1,0 +1,11 @@
+<% if @para_genre == "1" %>
+    <% displayed_book = "小説" %>
+    <% elsif @para_genre == "2" %>
+    <% displayed_book = "専門書" %>
+    <% elsif @para_genre == "3" %>
+    <% displayed_book = "その他の" %>
+    <% else %>
+    <% displayed_book = "本の" %>
+<% end %>
+
+<%= displayed_book %>一覧

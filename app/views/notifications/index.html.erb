@@ -1,8 +1,10 @@
-
-
-<% if @notifications.exists? %>
-<%= render "notifications", notifications: @notifications %>
-<% else %>
-通知はありませぬ
-<% end %>
-
+<div class="row">
+    <div class="col-md-3 notif">
+        <div class="headline">
+            通知一覧
+        </div>
+        <div>
+            <%= render "notifications", notifications: @notifications %>
+        </div>
+    </div>
+</div>

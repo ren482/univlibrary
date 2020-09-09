@@ -14,8 +14,37 @@
         <div class="headline">
            タイムライン
         </div>
-        <div class="white_area">
-            フォロー機能実装後に、フォローしてる人のレビューと本棚追加通知を一覧表示させたい
+        <div>
+            <!--フォローしてるユーザのレビュー一覧を表示させたい。-->
+            
+            <ul class="list-unstyled">
+            <% @users.each do |user| %>
+                <li>
+            <% reviews =  user.reviews %>
+            <% if reviews.any? %>
+                <% reviews.each do |review| %>
+                
+                <div class="row review-card">
+                    <div class="col-md-2 review-label">
+                       <p>本を読み始めた目的：</p>
+                       <p>ぱっと思い出せる1,2文：</p>
+                       <p>新たに得た考え方：</p>
+                       <p>全体の要約：</p>
+                    </div>
+                    <div class="offset-md-1 col-md-8 review-content">
+                       <%= review.purpose %> 
+                       <%= review.sentences %>
+                       <%= review.discovery %>
+                       <%= review.summary %>
+                    </div>
+                </div>
+
+                <% end %>
+            <% end %>
+            <% end %>
+                </li>
+            </ul>
+            
         </div>
     </div>
 </div>

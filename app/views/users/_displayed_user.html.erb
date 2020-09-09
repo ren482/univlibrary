@@ -1,0 +1,45 @@
+<% if @para_maj.nil? && @para_aca.nil? %>
+<% displayed_user = "全て" %>
+<% elsif @para_maj.nil? %>
+
+    <% if @para_aca == "1" %>
+    <% displayed_user = "学部生" %>
+    <% elsif @para_aca == "2" %>
+    <% displayed_user = "院生" %>
+    <% elsif @para_aca == "3" %>
+    <% displayed_user = "教授etc" %>
+    <% else %>
+    <% displayed_user = "何かしらのミス①" %>
+    <% end %>
+
+<% elsif @para_aca.nil? %>
+
+    <% if @para_maj == "1" %>
+    <% displayed_user = "法学系" %>
+    <% elsif @para_maj == "2" %>
+    <% displayed_user = "文学系" %>
+    <% elsif @para_maj == "3" %>
+    <% displayed_user = "教育系" %>
+    <% elsif @para_maj == "4" %>
+    <% displayed_user = "総人系" %>
+    <% elsif @para_maj == "5" %>
+    <% displayed_user = "経済系" %>
+    <% elsif @para_maj == "6" %>
+    <% displayed_user = "医学系" %>
+    <% elsif @para_maj == "7" %>
+    <% displayed_user = "工学系" %>
+    <% elsif @para_maj == "8" %>
+    <% displayed_user = "理学系" %>
+    <% elsif @para_maj == "9" %>
+    <% displayed_user = "薬学系" %>
+    <% elsif @para_maj == "10" %>
+    <% displayed_user = "農学系" %>
+    <% else %>
+    <% displayed_user = "なにかしらの②" %>
+    <% end %>
+
+<% else %>
+<% end %>
+
+
+<%= displayed_user %>

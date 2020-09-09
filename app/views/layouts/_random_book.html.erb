@@ -1,0 +1,23 @@
+<div class="headline">
+            ランダム本
+        </div>
+        <div>
+            <ul class="list-unstyled">
+            <li>タイトル：<%= @random_book.title %> </li>
+            
+            <% num = @random_book.genre %>
+            <% if num = 1 %>
+            <% genre = "小説" %>
+            <% elsif %>
+            <% num = 2 %>
+            <% genre = "専門書" %>
+            <% else %>
+            <% genre = "それら以外" %>
+            <% end %>
+            
+            <li>ジャンル：<%= genre %></li>
+            </ul>
+            <div>
+            <%= link_to "My本棚に追加", new_book_path, class: "Button" %>
+            </div>
+        </div>

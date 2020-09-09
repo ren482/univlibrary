@@ -18,10 +18,12 @@
     <%= f.text_area :summary, class: "form-control" %>
     <%= f.hidden_field :book_id %>
             </div>
-    <%= f.submit "アウトプットを完了する", class: "btn btn btn-success" %>
+    <%= f.submit "アウトプットを完了する", class: "Button" %>
     <% end %>
     
-    <%= link_to "Myページトップに戻る", mypage_users_path %>
+    
+    <%= link_to "戻る", mypage_users_path, class: "back" %>
+    
         </div>
         
 </div>

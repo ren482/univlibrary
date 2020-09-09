@@ -1,5 +1,9 @@
 <% notifications.each do |notification| %>
-<% notification.checked = true %>
+<% if notification.checked == false %>
 <% visitor = notification.visitor %>
-<li><%= visitor.name %>があなたをフォローしました。今後あなたのアウトプットは<%= visitor.name %>に見られるので、責任感を持って書いた方が良いですよ。まじで。</li>
+<ul class="list-unstyled">
+<li class="notif-item"><%= visitor.name %>があなたをフォローしました。今後あなたのアウトプットは<%= visitor.name %>に見られるので、責任感を持って書いた方が良いですよ。まじで。</li>
+</ul>
+<% else %>
+<% end %>
 <% end %>

@@ -1,15 +1,42 @@
 <div class="row">
-    <%= link_to "あほうだよ", users_path(major: 1), method: :post %>
-    <%= link_to "文学部だよ", users_path(major: 2), method: :post %>
-    <%= link_to "教育だよ", users_path(major: 3), method: :post %>
-    <%= link_to "総人だよ", users_path(major: 4), method: :post %>
-    <%= link_to "パラダイスよ", users_path(major: 5), method: :post %>
-    <%= link_to "医学だよ", users_path(major: 6), method: :post %>
-    <%= link_to "工学部だよ", users_path(major: 7), method: :post %>
-    <%= link_to "理学部だよ", users_path(major: 8), method: :post %>
-    <%= link_to "薬学部だよ", users_path(major: 9), method: :post %>
-    <%= link_to "農学部だよ", users_path(major: 10), method: :post %>
-</div>
-<div>
-    
+    <div>
+        <a class="topicon" href="<%= users_path(major: 1) %>"><%= image_tag "1.jpg", class: "topicon" %></a>
+        <p class="topicon_description">法学系</p>
+    </div>
+    <div>
+        <a class="topicon" href="<%= users_path(major: 2) %>"><%= image_tag "2.jpg", class: "topicon" %></a>
+        <p class="topicon_description">文学系</p>
+    </div>
+    <div>
+        <a class="topicon" href="<%= users_path(major: 3) %>"><%= image_tag "3.jpg", class: "topicon" %></a>
+        <p class="topicon_description">教育系</p>
+    </div>
+    <div>
+        <a class="topicon" href="<%= users_path(major: 4) %>"><%= image_tag "4.jpg", class: "topicon" %></a>
+        <p class="topicon_description">総人</p>
+    </div>
+    <div>
+        <a class="topicon" href="<%= users_path(major: 5) %>"><%= image_tag "5.jpg", class: "topicon" %></a>
+        <p class="topicon_description">経済系</p>
+    </div>
+    <div>
+        <a class="topicon" href="<%= users_path(major: 6) %>"><%= image_tag "6.jpg", class: "topicon" %></a>
+        <p class="topicon_description">医学系</p>
+    </div>
+    <div>
+        <a class="topicon" href="<%= users_path(major: 7) %>"><%= image_tag "7.jpg", class: "topicon" %></a>
+        <p class="topicon_description">工学系</p>
+    </div>
+    <div>
+        <a class="topicon" href="<%= users_path(major: 8) %>"><%= image_tag "8.jpg", class: "topicon" %></a>
+        <p class="topicon_description">理学系</p>
+    </div>
+    <div>
+        <a class="topicon" href="<%= users_path(major: 9) %>"><%= image_tag "9.jpg", class: "topicon" %></a>
+        <p class="topicon_description">薬学系</p>
+    </div>
+    <div>
+        <a class="topicon" href="<%= users_path(major: 10) %>"><%= image_tag "10.jpg", class: "topicon" %></a>
+        <p class="topicon_description">農学系</p>
+    </div>
 </div>

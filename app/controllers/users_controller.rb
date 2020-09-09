@@ -10,7 +10,9 @@ class UsersController < ApplicationController
     end
     
     @random_user = User.where( 'id >= ?', rand(User.first.id..User.last.id) ).first
-
+    
+    @para_aca = params[:academic_level]
+    @para_maj = params[:major]
     
   end
     
@@ -38,6 +40,9 @@ class UsersController < ApplicationController
   
   def mypage
     @user = current_user
+    @notifications = Notification.where(checked: false)
+    
+    @users = current_user.followings
   end
     
   def myreviews

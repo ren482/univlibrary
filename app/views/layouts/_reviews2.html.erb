@@ -1,0 +1,33 @@
+<% reviews.each do |review| %>
+<ul class="list-unstyled">
+    <li>
+        <div class="card">
+            <div class="headline_reviews">
+                <%= image_tag "アウトプット.png", class: "review_icon" %>
+            </div>
+            <div class="card-body" id="review_card_body">
+                <p>ユーザ名：<span class="space">－－－－－－</span>
+                    <a href="<%= user_path(review.user) %>">
+                    <%= review.user.name %>
+                    </a>
+                </p>
+                <p><span class="review-label">本のタイトル：</span><span class="space">－－－－</span>
+                    <span class="review-content"><%= review.book.title %></span>
+                </p>
+                <p><span class="review-label">本を読み始めた目的：</span><span class="space">－</span>
+                    <span class="review-content"><%= review.purpose %></span>
+                </p>
+                <p><span class="review-label">ぱっと思い出せる数文：</span>
+                    <span class="review-content"><%= review.sentences %></span>
+                </p>
+                <p><span class="review-label">新たに得た考え方：</span><span class="space">－－</span>
+                    <span class="review-content"><%= review.discovery %></soan>
+                </p>
+                <p> <span class="review-label">全体の要約：</span><span class="space">－ーーー－</span>
+                    <span class="review-content"><%= review.summary %></span>
+                </p>
+            </div>
+        </div>
+    </li>
+</ul>
+<% end %>

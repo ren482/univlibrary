@@ -1,12 +1,23 @@
-
+<div class="row">
+    <div class="offset-md-3 col-6">
+        
+<div class="headline mb-4">
+    My本棚に追加する
+</div>
 
 <%= form_with(url: addbooks_path, local: true) do |f| %>
 
-<%= f.label :title, "本のタイトル" %>
-<%= f.text_field :title, required: true %>
+<%= f.text_field :title, required: true, placeholder: "本のタイトル", class: "form-control" %>
 <%= f.select :genre, {"小説":1, "専門書":2, "その他(一般向け学問書etc)":3}, {include_blank: "ジャンルを選択して下さい"}, {class: "form-control", required: true} %>
-<%= f.select :status, {"既読":2, "未読":1}, { include_blank: "読み終えていますか？"} %>
+<%= f.select :status, {"既読":2, "未読":1}, { include_blank: "読み終えていますか？"}, class: "form-control" %>
 
-<%= f.submit "内容を確認する" %>
+<%= f.submit "内容を確認する", class: "Button mt-4 btn-block" %>
 <% end %>
+<div class="back">
+<%= link_to :back do %>
+  戻る
+<% end %>
+</div>
+    </div>
+</div>
 

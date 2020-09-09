@@ -1,17 +1,36 @@
-<div class="row">
-    <div class="col-md-10 orange_area row">
-            <div class="col-md-2">
-                <a href="#">ユーザのアイコン表示はまじでムズイ</a>
-            </div>
-            <div class="col-md-7 usertext_display_area">
-                <%= @user.name %>:<%= @user.profile_content %>
-            </div>
-            <div class="col-md-2">
-                <% num = @user.major %>
-                <%= image_tag "#{num}.jpg" %>
-            </div>
-    </div>
+<!--<div class="row">-->
+<!--    <div class="col-md-10 row">-->
+<!--            <div class="col-md-2">-->
+<!--                <p><%#= @user.name %></p>-->
+<!--                <%#= render "relationships/follow_button", user: @user %>-->
+<!--            </div>-->
+<!--            <div class="col-md-7 usertext_display_area">-->
+<!--                <%#= @user.name %>:<%#= @user.profile_content %>-->
+<!--            </div>-->
+<!--            <div class="col-md-2">-->
+<!--                <%# num = @user.major %>-->
+<!--                <a href="<%# users_path(major: num) %>"><%#= image_tag "#{num}.jpg" %></a>-->
+<!--            </div>-->
+<!--    </div>-->
     
+<!--</div>-->
+<div class="row">
+    <div class="col-md-2">
+                          <div class="row ml-0" >
+                          Mrs.<%= @user.name %><p class="space">i</p>:<p class="space">i</p><%= @user.profile_content %>
+                          </div>
+                          <% num = @user.major %>
+                          <div class="row ml-1">
+                          <a class="major_icon", href="<%= users_path(major: num) %>"><%= image_tag "#{num}.jpg", class: "major_icon" %></a>
+                          <p class="popup"><%= render "layouts/popup_major", major: num %></p>
+                          </div>
+                          <% numnum = @user.academic_level %>
+                          <div class="row ml-1">
+                          <a class="major_icon" href="<%= users_path(academic_level: numnum) %>"><%= image_tag "#{numnum}'.png", class: "major_icon" %></a>
+                          <p class="popup"><%= render "layouts/popup_academic_level", academic_level: numnum %></p>
+                          </div>
+                          <%= render "relationships/follow_button", user: @user %>
+   </div>
 </div>
 
 

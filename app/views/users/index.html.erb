@@ -3,22 +3,27 @@
         <%= render "layouts/sidebar_filter" %>
     </div>
     <div class="col-md-7">
-        <p class="headline">のユーザ一覧</p>
+        <p class="headline"><%= render "displayed_user" %>のユーザ一覧</p>
         <div>
             <% if @users.any? %>
             <% @users.each do |user| %>
             <ul class="list-unstyled">
                 <li>
-                    <div class="orange_area">
-                          <a href="<%= user_path(user) %>">ユーザアイコンの表示はムズイ（∵ユーザモデルにicon_imageを保存する際の仕組みがいまいちわかってないから)</a>
-                          <%= render "relationships/follow_button", user: user %>
+                    <div class="user-index">
+                    <div class="user-index-content">
+                          <a href="<%= user_path(user) %>">Mrs.<%= user.name %></a>:<%= user.profile_content %>
                           <% num = user.major %>
-                          <a href="<%= users_path(major: num) %>"><%= image_tag "#{num}.jpg", class: "major_icon" %></a>
+                          <div class="row ml-1">
+                          <a class="major_icon", href="<%= users_path(major: num) %>"><%= image_tag "#{num}.jpg", class: "major_icon" %></a>
+                          <p class="popup"><%= render "layouts/popup_major", major: num %></p>
+                          </div>
                           <% numnum = user.academic_level %>
-                          <a href="<%= users_path(academic_level: numnum) %>"><%= image_tag "#{numnum}'.png", class: "major_icon" %></a>
-                    </div>
-                    <div class="text_display_area">
-                    <%= user.profile_content %>
+                          <div class="row ml-1">
+                          <a class="major_icon" href="<%= users_path(academic_level: numnum) %>"><%= image_tag "#{numnum}'.png", class: "major_icon" %></a>
+                          <p class="popup"><%= render "layouts/popup_academic_level", academic_level: numnum %></p>
+                          </div>
+                          <%= render "relationships/follow_button", user: user %>
+                    </div> 
                     </div>
                 </li>
             </ul>
