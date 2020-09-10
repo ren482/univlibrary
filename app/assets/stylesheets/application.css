@@ -27,7 +27,13 @@ nav {
     box-shadow:0px 1px 30px 1px #8EB8FF ;
     margin-bottom:100px;
 }
-
+.transparent {
+    opacity:0.55;
+}
+.strong {
+    font-weight:700;
+    color:#1458A7;
+}
 footer {
     color:#8EB8FF;
 }
@@ -38,21 +44,90 @@ footer {
     width:530px;
 }
 #quote {
-    display:block;
+    display:flex;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    justify-content:space-between;
     width:520px;
     height:300px;
+    padding:10px;
     margin-right:0px;
+    background-image:url("pinkblue.jpg");
+    
+}
+#quote-content1 {
+    display:block;
+    height:200px;
+    color:#ffffff;
+    font-size:12px;
+    font-weight:900;
+    opacity:0.45;
+}
+#quote-content2 {
+    display:block;
+    height:100px;
+    color:#ffffff;
+    font-size:12px;
+    font-weight:900;
+    text-align:right;
+    opacity:0.85;
+}
+
+.membership-icon {
+    display:inline-block;
+    width:80px;
+    height:80px;
+    margin-left:10px;
+    padding:5px;
+    border:1px solid #1458A7;
+    border-radius:2px;
+}
+.membership-icon-description {
+    display:none;
+    border:solid 1px #1458A7;
+    border-radius:2px;
+    font-size:9px;
+    padding-top:5px;
+    padding-bottom:5px;
+    margin-left:5px;
+    background-color:#1458A7;
+    color:#ffffff;
+    opacity:0.55;
+}
+.membership-icon-description:before {
+    content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: -15px;
+  top: 20px;
+  border-right: 15px solid #1458A7;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.membership-icon:hover{
+    box-shadow:1px 1px 5px 2px #8EB8FF;
+}
+
+
+.membership-icon:hover + .membership-icon-description {
+    display:inline;
 }
 .headline {
     border-bottom: solid 1px #dddddd;
     margin:10px;
     text-align:center;
     color:#1458A7;
+    font-weight:700;
 }
 .headline_nextto_quote{
     border-bottom: solid 1px #dddddd;
     margin-bottom:10px;
     text-align:center;
+    font-weight:700;
+    font-size:20px;
     color:#1458A7;
 }
 .headline_reviews{
@@ -179,7 +254,22 @@ footer {
 .topicon_description {
     display:none;
 }
-
+.top-major_icons {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.top-academic_level_icons {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center
+}
+.top-academic_level_icon {
+    margin-left:10px;
+    margin-right:10px;
+}
 .card {
     padding:10px;
 }
@@ -206,11 +296,7 @@ footer {
     border:2px solid #000000;
     margin:0px 10px 10px 10px;
 }
-.usertext_display_area {
-    border-radius:5px;
-    border:2px solid #000000;
-    margin:5px;
-}
+
 .major_icon {
     display:block;
     width:40px;

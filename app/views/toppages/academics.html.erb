@@ -1,22 +1,47 @@
 <div class="row">
     <div class="offset-md-2"></div>
     
-     <div class="col-md-8">
+     <div class="col-md-9">
          
-        <div class="row white_area">
-        <div class="col-md-9"><img src="#" alt="名言です。"></div>
-        <div class="col-md-3">
-             <h3 class="headline">会員限定</h3>
-             <img src="アウトプット.png" alt="アウトプット管理機能">
-             <img src="#" alt="通知機能">
+        <div class="row">
+        <div class="col-md-8">
+            <div id="quote-frame">
+                <div id="quote">
+                    <p id="quote-content1">
+                        “Reading is still the main way<br>
+                        that I both learn new things and test my understanding.”<br><br>
+                        - Bill Gates
+                    </p>
+                    <p id="quote-content2">
+                        “Reading without reflecting is like<br>
+                        eating without digesting.” <br><br>
+                        - Edmund Burke
+                    </p>
+                </div>
+                <%#= image_tag "pinkblue.jpg", id: "quote" %>
+            </div>
         </div>
+        <div class="col-md-3">
+             <p class="headline_nextto_quote col-md-10 membership">会員限定</p>
+             <div class="row">
+                <%= image_tag "アウトプット.png", class: "membership-icon" %>
+                <div class="col-md-6 membership-icon-description">自分なりのアウトプットを出すことで、読みっぱなしで終わらないようになると思います。</div>
+             </div>
+             <div class="row">
+                <%= image_tag "本棚.png", class: "membership-icon" %>
+                <div class="col-md-5 membership-icon-description">Myページの本棚で、自分の読書を定期的に振り返りやすくします。</div>
+             </div>
         </div>
         
-        <div>
+        </div>
+        
+     
+        
+        <div class="col-md-10">
             <p class="headline">本を見つける</p>
         </div>
         <div class="row">
-            <div class="col-md-6 card">
+            <div class="col-md-5 card">
                 <div class="card-header">
                     本のジャンルを見る
                 </div>
@@ -27,37 +52,68 @@
                             <%= link_to "小説", books_path(genre: 1), method: :post, class: "Button" %>
                         </div>
                         <div class="col-md-4">
-                            <a href="#" class="col-md-4"><%= image_tag "2''.jpg", alt: "それら以外です", class: "topicon" %></a>
-                            <%= link_to "小説", books_path(genre: 2), method: :post, class: "Button" %>
+                            <a href="#" class="col-md-4"><%= image_tag "2''.jpg", alt: "専門書です", class: "topicon" %></a>
+                            <%= link_to "専門書", books_path(genre: 2), method: :post, class: "Button" %>
                         </div>
                         <div class="col-md-4">
-                            <a href="#" class="col-md-4"><%= image_tag "3''.jpg", alt: "専門書です", class: "topicon" %></a>
-                            <%= link_to "小説", books_path(genre: 3), method: :post, class: "Button" %>
+                            <a href="#" class="col-md-4"><%= image_tag "3''.jpg", alt: "それら以外です", class: "topicon" %></a>
+                            <%= link_to "それら以外", books_path(genre: 3), method: :post, class: "Button" %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="offset-md-1 col-md-4 card">
+                <div class="card-header">
+                    外部サイトを見る
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="https://www.kinokuniya.co.jp/c/kinobest2020/" class="col-md-4"><%= image_tag "kinokuniya.jpg", alt: "外部サイトです", class: "topicon" %></a>
+                            <a href="https://www.kinokuniya.co.jp/c/kinobest2020/" class="Button">紀伊国屋</a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="https://honto.jp/" class="col-md-4"><%= image_tag "honto.png", alt: "外部サイトです", class: "topicon" %></a>
+                            <a href="https://honto.jp/" class="Button">honto</a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="https://monoreco.ameba.jp/media/" class="col-md-4"><%= image_tag "monoreko.jpg", alt: "外部サイトです", class: "topicon" %></a>
+                            <a href="https://monoreco.ameba.jp/media/" class="Button">モノレコ</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="headline col-md-10">アウトプットを見つける</div>
         <div class="row">
-            <div class="col-md-6 card">
+            <div class="offset-md-2 col-md-7 card">
                 <div class="card-header">
                     他人のアウトプットを見る
                 </div>
-                <div class="card-body">
-                    <a href="<%= reviews_path %>"><%= image_tag "アウトプット.png" %></a>
+                <div class="card-body row">
+                    <div class="col-md-3">
+                        <a class="topicon" href="<%= reviews_path %>"><%= image_tag "アウトプット.png", class: "topicon" %></a>
+                        <a href="#" class="Button">アウトプット一覧</a>
+                    </div>
+                    <div class="col-md-8" id = "quote-sentences">
+                        「インプットしたら即刻アウトプット（言語化）をする。 　
+                        巷 にはさまざまな勉強法が存在していますが、これこそが、
+                        確実に力がつく一番の方法なのではないでしょうか。」
+                    　　<p style="text-align:end;">－『人生の教養が身に着く本』</p>
+                    </div>
                 </div>
                 
             </div>
         </div>
         <div>
-            <p class="headline">人を見つける</p>
+            <p class="headline col-md-10">人を見つける</p>
         </div>
-        <div>
-            <ul class="nav nav-tabs nav-justified mb-3">
-                <li class="nav-item"><a href="/">専攻で人を見る</a></li>
-                <li class="nav-item"><a href="#">学問レベルで人を見る</a></li>
+        <div class="col-md-10">
+            <ul class="nav nav-tabs nav-justified mb-3 ">
+                <li class="nav-item transparent"><a href="/">専攻で人を見る</a></li>
+                <li class="nav-item strong">学問レベルで人を見る</li>
             </ul>
-            <div>
+            <div >
                 <%= render "academic_level" %>
             </div>
         </div>
